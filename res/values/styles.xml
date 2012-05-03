@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style parent="@android:style/Theme" name="Nifty.Progress.Indeterminate">
+        <item name="android:src">@drawable/nifty_spinner_white_48</item>
+    </style>
+</resources>

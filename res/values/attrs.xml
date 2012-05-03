@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources >
+<resources>
+
     <declare-styleable name="Nifty">
-    	<attr name="typeface" format="string" />
+        <attr name="typeface" format="string" />
+    </declare-styleable>
+    
+    <declare-styleable name="Nifty.ProgressDialog.FullScreen">
+        <attr name="background" format="string|reference" />
+        <attr name="brandingLogo" format="string|reference" />
     </declare-styleable>
 </resources>
