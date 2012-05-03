@@ -32,7 +32,7 @@ class NiftyTextViewHelper {
 			view.setTypeface(typeface);
 		} else {
 			Log.w(TAG,
-					"View had confnow:typeface attribute but no typeface was found in /assets");
+					"View had typeface attribute but no typeface was found in /assets");
 		}
 	}
 }
