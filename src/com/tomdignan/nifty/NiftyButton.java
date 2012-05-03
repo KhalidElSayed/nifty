@@ -12,8 +12,8 @@ import android.widget.TextView;
  * @author Tom Dignan
  */
 public class NiftyButton extends Button {
-	/** Tag for identify class in log */
-	private static final String TAG = "NiftyButton";
+    /** Tag for identify class in log */
+    private static final String TAG = "NiftyButton";
     
     public NiftyButton(Context context, AttributeSet attrs) {
         super(context, attrs);

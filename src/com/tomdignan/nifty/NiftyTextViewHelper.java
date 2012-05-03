@@ -26,8 +26,8 @@ class NiftyTextViewHelper {
 		String typefaceDesc = attributes.getString(R.styleable.Nifty_typeface);
 
 		if (typefaceDesc != null) {
-			Typeface typeface = NiftyTypefaceHelper.getTypeface(context,
-					typefaceDesc);
+            Typeface typeface = NiftyTypefaceHelper.getTypeface(context,
+                    typefaceDesc);
 			Log.d(TAG, "setTypeface(" + typeface.toString() + ")");
 			view.setTypeface(typeface);
 		} else {
