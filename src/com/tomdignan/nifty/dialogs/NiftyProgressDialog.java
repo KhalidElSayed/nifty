@@ -30,11 +30,6 @@ public class NiftyProgressDialog extends NiftyBaseDialog implements INiftyDismis
 	}
 	
 	@Override
-	public void cancel() {
-		
-	}
-	
-	@Override
 	public void dismiss() {
 		if (!mIsDialogDismissed) {
 			mIsDialogDismissed = true;
