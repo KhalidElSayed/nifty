@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 
 /**
  * Helper for acquiring font from assets. Lazy loads and keeps fonts cached.
@@ -13,6 +14,8 @@ import android.graphics.Typeface;
  * @author Tom Dignan
  */
 public class NiftyTypefaceHelper {
+	private static final String TAG = "NiftyTypefaceHelper";
+	
     private static final HashMap<String,Typeface> TYPEFACE_CACHE =
             new HashMap<String,Typeface>();
     
@@ -20,7 +23,7 @@ public class NiftyTypefaceHelper {
     public static Typeface getTypeface(Context context, String name) {
         // ensure the global context is used. just in case.
         context = context.getApplicationContext();
-        
+        Log.d(TAG, "name="+name);
         if (TYPEFACE_CACHE.containsKey(name)) {
             return TYPEFACE_CACHE.get(name);
         } 

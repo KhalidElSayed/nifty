@@ -11,6 +11,7 @@ import android.widget.TextView;
  * @author Tom Dignan
  */
 public class NiftyTextView extends TextView {
+
     /** Tag for identify class in log */
     private static final String TAG = "NiftyTextView";
     

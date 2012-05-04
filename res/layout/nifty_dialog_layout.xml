@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nifty="http://schemas.tomdignan.com/nifty"
+    android:id="@+id/nifty_vRoot"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="?attr/background"
-    android:id="@+id/nifty_vRoot"
-     >
-
-    <com.tomdignan.nifty.NiftyTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        typeface="?attr/typeface" />
+    android:background="?attr/background" >
 
     <ImageView
         android:id="@+id/nifty_ivSpinner"
@@ -22,6 +14,20 @@
         android:layout_centerVertical="true"
         android:src="?attr/spinner" />
 
+    <com.tomdignan.nifty.NiftyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/nifty_ivSpinner"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/nifty_ntvMessage"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:text="?attr/message"
+        android:textColor="?attr/messageColor"
+        nifty:typeface="?attr/messageTypeface"
+         />
+
     <ImageView
         android:id="@+id/nifty_ivBrandingLogo"
         android:layout_width="wrap_content"
@@ -29,5 +35,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:src="?attr/brandingLogo" />
-    
+
 </RelativeLayout>
