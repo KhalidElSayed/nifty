@@ -19,11 +19,12 @@ class NiftyTextViewHelper {
 	/** For identify class in Log */
 	private static final String TAG = "NiftyViewHelper";
 
-	private static final String NIFTY_ATTR_TYPEFACE = "typeface";
 	
 	/** Corresponds to the constructor of TextView and children */
 	public static void initialize(TextView view, Context context,
 			AttributeSet attributeSet) {
+		
+		
 		TypedArray attributes = context.obtainStyledAttributes(attributeSet,
 				R.styleable.Nifty, R.attr.typeface, 0);
 
@@ -34,6 +35,11 @@ class NiftyTextViewHelper {
 			typefaceDesc = attributes.getString(R.styleable.Nifty_messageTypeface);
 		}
 
+		// If not set in the messageTypeface, attempt to pull from "nifty:typeface" 
+		if (typefaceDesc == null) {
+			typefaceDesc = attributeSet.getAttributeValue(NS_NIFTY, "typeface");
+		}
+		
 		if (typefaceDesc != null) {
             Typeface typeface = NiftyTypefaceHelper.getTypeface(context,
                     typefaceDesc);
