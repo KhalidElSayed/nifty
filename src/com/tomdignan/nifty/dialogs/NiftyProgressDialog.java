@@ -12,63 +12,63 @@ import android.view.animation.Animation.AnimationListener;
  * @author Tom Dignan
  */
 public class NiftyProgressDialog extends NiftyBaseDialog implements INiftyDismissAnimation {
-	private View mOnDismissAnimationView = null;
-	private Animation mOnDismissAnimation = null;
-	private boolean mIsAnimationRunning = false;
-	private boolean mIsDialogDismissed = false;
-	
-	protected NiftyProgressDialog(Context context, int theme,
-			OnCancelListener cancelListener) {
-		super(context, theme);
-	}
-	
-	@Override
-	protected void onStart() {
-		mIsDialogDismissed = false;
-		mIsAnimationRunning = false;
-		super.onStart();
-	}
-	
-	@Override
-	public void dismiss() {
-		if (!mIsDialogDismissed) {
-			mIsDialogDismissed = true;
-			doDismiss();
-		}
-	}
-	
-	private void doDismiss() {
-		if (mIsAnimationRunning == false && mOnDismissAnimationView != null
-				&& mOnDismissAnimation != null) {
-			mIsAnimationRunning = true;
-			
-			mOnDismissAnimation.setAnimationListener(new AnimationListener() {
-				@Override
-				public void onAnimationStart(Animation animation) {}
-				
-				@Override
-				public void onAnimationRepeat(Animation animation) {}
-				
-				@Override
-				public void onAnimationEnd(Animation animation) {
-					parentDismiss();
-					mIsAnimationRunning = false;
-				}
-			});
-			
-			mOnDismissAnimationView.startAnimation(mOnDismissAnimation);
-		} else {
-			super.dismiss();
-		}
-	}
-	
-	private void parentDismiss() {
-		super.dismiss();
-	}
+    private View mOnDismissAnimationView = null;
+    private Animation mOnDismissAnimation = null;
+    private boolean mIsAnimationRunning = false;
+    private boolean mIsDialogDismissed = false;
+    
+    protected NiftyProgressDialog(Context context, int theme,
+            OnCancelListener cancelListener) {
+        super(context, theme);
+    }
+    
+    @Override
+    protected void onStart() {
+        mIsDialogDismissed = false;
+        mIsAnimationRunning = false;
+        super.onStart();
+    }
+    
+    @Override
+    public void dismiss() {
+        if (!mIsDialogDismissed) {
+            mIsDialogDismissed = true;
+            doDismiss();
+        }
+    }
+    
+    private void doDismiss() {
+        if (mIsAnimationRunning == false && mOnDismissAnimationView != null
+                && mOnDismissAnimation != null) {
+            mIsAnimationRunning = true;
+            
+            mOnDismissAnimation.setAnimationListener(new AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {}
+                
+                @Override
+                public void onAnimationRepeat(Animation animation) {}
+                
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    parentDismiss();
+                    mIsAnimationRunning = false;
+                }
+            });
+            
+            mOnDismissAnimationView.startAnimation(mOnDismissAnimation);
+        } else {
+            super.dismiss();
+        }
+    }
+    
+    private void parentDismiss() {
+        super.dismiss();
+    }
 
-	@Override
-	public void setOnDismissAnimation(View view, Animation anim) {
-		mOnDismissAnimationView = view;
-		mOnDismissAnimation = anim;
-	}
+    @Override
+    public void setOnDismissAnimation(View view, Animation anim) {
+        mOnDismissAnimationView = view;
+        mOnDismissAnimation = anim;
+    }
 }

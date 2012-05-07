@@ -14,8 +14,8 @@ import android.util.Log;
  * @author Tom Dignan
  */
 public class NiftyTypefaceHelper {
-	private static final String TAG = "NiftyTypefaceHelper";
-	
+    private static final String TAG = "NiftyTypefaceHelper";
+    
     private static final HashMap<String,Typeface> TYPEFACE_CACHE =
             new HashMap<String,Typeface>();
     

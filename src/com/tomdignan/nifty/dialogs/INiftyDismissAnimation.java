@@ -10,5 +10,5 @@ import android.view.animation.Animation;
  * @author Tom Dignan
  */
 public interface INiftyDismissAnimation {
-	void setOnDismissAnimation(View view, Animation anim);
+    void setOnDismissAnimation(View view, Animation anim);
 }
